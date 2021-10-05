@@ -20,6 +20,8 @@ class APIClient:
 
     def __init__(self, base_address):
         self.base_address = base_address
+        self.client_secret = "ZlxUY81YlQOdWcof9G6EkHiz0316Z1Xhr0WNHDKY"
+        self.client_id = 8
         setup_logger()
         self.headers = {
             "X-API-Context-Shop-Id": "2527",
