@@ -1,8 +1,11 @@
 import logging
+from typing import Dict
 
 import requests
 import http.client as http_client
 from requests import Response
+
+from tests.datastore import User
 
 
 def setup_logger():
@@ -31,16 +34,24 @@ class APIClient:
             "Content-Type": "application/json",
         }
 
-    def post(self, path="/", params=None, data=None, headers=None) -> Response:
+    def post(self, path="/", params=None, data=None, headers=None, user: User = None) -> Response:
         url = self.base_address + path
-        return requests.post(url=url, params=params, data=data, headers=self.headers)
+        new_headers = self.merge_headers(headers, user)
+        return requests.post(url=url, params=params, data=data, headers=new_headers)
 
-    def get(self, path="/", params=None, headers=None) -> Response:
-        session_headers = dict(self.headers)
+    def get(self, path="/", params=None, headers=None, user: User = None) -> Response:
+
+        new_headers = self.merge_headers(headers, user)
+        return requests.get(url=self.base_address + path, params=params, headers=new_headers)
+
+    def merge_headers(self, headers, user: User = None) -> Dict:
         new_headers = {}
+        session_headers = dict(self.headers)
+        if user and user.token:
+            new_headers = {"Authorization": f"Bearer {user.token}"}
         if headers:
             new_headers.update(headers)
             new_headers.update(session_headers)
         else:
             new_headers.update(session_headers)
-        return requests.get(url=self.base_address + path, params=params, headers=new_headers)
+        return new_headers

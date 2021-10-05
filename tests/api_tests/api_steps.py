@@ -16,7 +16,7 @@ def pin_request(user: User, api_client: APIClient) -> Response:
         "response_type": "phone_code",
         "scope": ""
     })
-    return api_client.post(path=token_request_path, data=data)
+    return api_client.post(path=token_request_path, data=data, user=user)
 
 
 def auth_request(user: User, api_client: APIClient) -> Response:
@@ -34,5 +34,5 @@ def auth_request(user: User, api_client: APIClient) -> Response:
 
 
 def privileges_request(user: User, api_client: APIClient) -> Response:
-    response = api_client.get(path=privileges_request_path, headers={"Authorization": f"Bearer {user.token}"})
+    response = api_client.get(path=privileges_request_path, user=user)
     return response

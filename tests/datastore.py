@@ -5,7 +5,7 @@ class User:
 
     def __init__(self):
         self.phone = create_a_phone()
-        self.token = ""
+        self.token = None
 
 
 class DataStore:
