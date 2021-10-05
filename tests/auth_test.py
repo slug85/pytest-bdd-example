@@ -1,4 +1,3 @@
-from tests.api_client import APIClient
 from tests.api_steps import *
 from tests.datastore import DataStore
 
