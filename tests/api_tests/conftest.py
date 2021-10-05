@@ -2,7 +2,7 @@ import pytest
 from email.parser import Parser
 from _pytest.fixtures import FixtureRequest
 
-from tests.api_client import APIClient
+from tests.api_tests.api_client import APIClient
 from tests.datastore import DataStore
 
 

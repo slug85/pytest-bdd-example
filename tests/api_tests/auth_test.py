@@ -1,4 +1,4 @@
-from tests.api_steps import *
+from tests.api_tests.api_steps import *
 from tests.datastore import DataStore
 
 
