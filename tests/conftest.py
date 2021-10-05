@@ -3,6 +3,7 @@ from email.parser import Parser
 from _pytest.fixtures import FixtureRequest
 
 from tests.api_client import APIClient
+from tests.datastore import DataStore
 
 
 def pytest_addoption(parser: Parser):
@@ -17,3 +18,8 @@ def pytest_addoption(parser: Parser):
 def api_client(request: FixtureRequest) -> APIClient:
     base_url = request.config.getoption("--url")
     return APIClient(base_address=base_url)
+
+
+@pytest.fixture(scope="session")
+def datastore() -> DataStore:
+    return DataStore()
