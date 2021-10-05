@@ -2,7 +2,7 @@ import pytest
 from email.parser import Parser
 from _pytest.fixtures import FixtureRequest
 
-from tests.api_tests.api_client import APIClient
+from tests.api_tests.api_steps import *
 from tests.datastore import DataStore
 
 
@@ -23,3 +23,9 @@ def api_client(request: FixtureRequest) -> APIClient:
 @pytest.fixture(scope="function")
 def datastore() -> DataStore:
     return DataStore()
+
+
+@pytest.fixture(scope="function")
+def auth(api_client: APIClient, datastore: DataStore):
+    pin_request(user=datastore.user, api_client=api_client)
+    auth_request(user=datastore.user, api_client=api_client)

@@ -7,3 +7,8 @@ def test_auth(api_client: APIClient, datastore: DataStore):
     assert response.status_code == 201
     response = auth_request(user=datastore.user, api_client=api_client)
     assert response.status_code == 200
+
+
+def test_priviledges(auth, api_client: APIClient, datastore: DataStore):
+    response = privileges_request(datastore.user, api_client)
+    assert response.status_code == 200

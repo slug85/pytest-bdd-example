@@ -31,3 +31,8 @@ def auth_request(user: User, api_client: APIClient) -> Response:
     response = api_client.post(path=auth_request_path, data=data)
     user.token = response.json()['access_token']
     return response
+
+
+def privileges_request(user: User, api_client: APIClient) -> Response:
+    response = api_client.get(path=privileges_request_path, headers={"Authorization": f"Bearer {user.token}"})
+    return response
