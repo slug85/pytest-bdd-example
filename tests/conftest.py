@@ -1,5 +1,7 @@
 import pytest
 
+from tests.api_client import APIClient
+
 
 def pytest_addoption(parser):
     parser.addoption(
@@ -9,6 +11,7 @@ def pytest_addoption(parser):
     )
 
 
-@pytest.fixture
-def url_param(request):
-    return request.config.getoption("--url")
+@pytest.fixture(scope="session")
+def api_client(request) -> APIClient:
+    base_url = request.config.getoption("--url")
+    return APIClient(base_address=base_url)
