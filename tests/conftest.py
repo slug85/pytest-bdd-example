@@ -20,6 +20,6 @@ def api_client(request: FixtureRequest) -> APIClient:
     return APIClient(base_address=base_url)
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="function")
 def datastore() -> DataStore:
     return DataStore()
