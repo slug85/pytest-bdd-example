@@ -1,9 +1,11 @@
 import pytest
+from email.parser import Parser
+from _pytest.fixtures import FixtureRequest
 
 from tests.api_client import APIClient
 
 
-def pytest_addoption(parser):
+def pytest_addoption(parser: Parser):
     parser.addoption(
         "--url",
         action="store",
@@ -12,6 +14,6 @@ def pytest_addoption(parser):
 
 
 @pytest.fixture(scope="session")
-def api_client(request) -> APIClient:
+def api_client(request: FixtureRequest) -> APIClient:
     base_url = request.config.getoption("--url")
     return APIClient(base_address=base_url)
