@@ -28,4 +28,6 @@ def auth_request(user: User, api_client: APIClient) -> Response:
         "pin": "12321",
         "scope": ""
     })
-    return api_client.post(path=auth_request_path, data=data)
+    response = api_client.post(path=auth_request_path, data=data)
+    user.token = response.json()['access_token']
+    return response
