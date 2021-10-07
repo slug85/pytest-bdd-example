@@ -5,7 +5,7 @@ import requests
 import http.client as http_client
 from requests import Response
 
-from tests.datastore import User
+from datastore import User
 
 
 def setup_logger():

@@ -2,9 +2,9 @@ import json
 
 from requests import Response
 
-from tests.api_tests.api_client import APIClient
-from tests.api_tests.api_paths import *
-from tests.datastore import User
+from api_tests.api_client import APIClient
+from api_tests.api_paths import *
+from datastore import User
 
 
 def pin_request(user: User, api_client: APIClient) -> Response:

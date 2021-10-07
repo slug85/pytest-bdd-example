@@ -2,9 +2,9 @@ import pytest
 from email.parser import Parser
 from _pytest.fixtures import FixtureRequest
 
-from tests.api_tests.api_client import APIClient
-from tests.api_tests.api_requests import pin_request, auth_request
-from tests.datastore import DataStore
+from api_tests.api_client import APIClient
+from api_tests.api_requests import pin_request, auth_request
+from datastore import DataStore
 
 
 def pytest_addoption(parser: Parser):

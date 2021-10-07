@@ -1,4 +1,4 @@
-from tests.generator import create_a_phone
+from generator import create_a_phone
 
 
 class User:
