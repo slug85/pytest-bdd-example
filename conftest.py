@@ -2,8 +2,8 @@ import pytest
 from email.parser import Parser
 from _pytest.fixtures import FixtureRequest
 
-from api_tests.api_client import APIClient
-from api_tests.api_requests import pin_request, auth_request
+from api_client import APIClient
+from api_requests import pin_request, auth_request
 from datastore import DataStore
 
 
