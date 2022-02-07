@@ -21,18 +21,18 @@ def setup_logger():
 
 class APIClient:
 
-    def __init__(self, base_address):
-        self.base_address = base_address
-        self.client_secret = "ZlxUY81YlQOdWcof9G6EkHiz0316Z1Xhr0WNHDKY"
-        self.client_id = 8
-        setup_logger()
-        self.headers = {
+    def __init__(self, base_address: str):
+        self.base_address: str = base_address
+        self.client_secret: str = "ZlxUY81YlQOdWcof9G6EkHiz0316Z1Xhr0WNHDKY"
+        self.client_id: int = 8
+        self.headers: dict = {
             "X-API-Context-Shop-Id": "2527",
             "X-Data-Platform": "Android",
             "X-Data-Model": "Samsung",
             "X-Data-Version": "1.14",
             "Content-Type": "application/json",
         }
+        setup_logger()
 
     def post(self, path="/", params=None, data=None, headers=None, user: User = None) -> Response:
         url = self.base_address + path
