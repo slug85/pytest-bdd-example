@@ -1,5 +1,5 @@
 import pytest
-from email.parser import Parser
+from _pytest.config.argparsing import Parser
 from _pytest.fixtures import FixtureRequest
 
 from api_client import APIClient
