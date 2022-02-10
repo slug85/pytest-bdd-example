@@ -4,12 +4,12 @@ from selene import browser
 from datastore import DataStore
 
 
-@scenario(feature_name="web_auth.feature", scenario_name="Открытие формы")
+@scenario(feature_name="web.feature", scenario_name="Открытие формы")
 def test_auth(datastore: DataStore, config_browser):
     pass
 
 
-@scenario(feature_name="web_auth.feature", scenario_name="Открытие каталога")
+@scenario(feature_name="web.feature", scenario_name="Открытие каталога")
 def test_catalog(datastore: DataStore, config_browser):
     pass
 
