@@ -1,6 +1,6 @@
 from pytest_bdd import scenario, given
+from bdd.web.ui.catalog_page import CatalogPage
 from selene import browser
-
 from datastore import DataStore
 
 
@@ -21,4 +21,9 @@ def open_main_page(datastore: DataStore):
 
 @given("Я открываю каталог")
 def open_catalog(datastore: DataStore):
-    browser.open_url("catalog/1304/ryba-i-moreprodukty")
+    CatalogPage.open()
+
+
+@given("Я проверяю товары в каталоге")
+def open_catalog(datastore: DataStore):
+    CatalogPage.check_catalog()
