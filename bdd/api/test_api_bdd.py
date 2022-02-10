@@ -1,5 +1,5 @@
 from pytest_bdd import scenario, given, then
-from api_requests import *
+from bdd.api.api_requests import *
 from datastore import DataStore
 
 

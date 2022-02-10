@@ -2,8 +2,8 @@ import json
 
 from requests import Response
 
-from api_client import APIClient
-from api_paths import *
+from bdd.api.api_client import APIClient
+from bdd.api.api_paths import *
 from datastore import User
 
 

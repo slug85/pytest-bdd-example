@@ -1,9 +1,7 @@
 import pytest
 from _pytest.config.argparsing import Parser
-from _pytest.fixtures import FixtureRequest
-
-from api_client import APIClient
-from api_requests import pin_request, auth_request
+from bdd.api.api_client import APIClient
+from bdd.api.api_requests import pin_request, auth_request
 from datastore import DataStore
 
 
