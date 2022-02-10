@@ -4,9 +4,9 @@ from selene import browser
 from datastore import DataStore
 
 
-@scenario(feature_name="web/web_auth.feature", scenario_name="Открытие формы", features_base_dir="../features")
+@scenario(feature_name="web_auth.feature", scenario_name="Открытие формы")
 def test_auth(datastore: DataStore, config_browser):
-    open_main_page(datastore)
+    pass
 
 
 @given("Я открываю главную страницу")
