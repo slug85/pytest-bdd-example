@@ -3,12 +3,12 @@ from api_requests import *
 from datastore import DataStore
 
 
-@scenario(feature_name="privileges.feature", scenario_name="Получение", features_base_dir="features")
+@scenario(feature_name="privileges.feature", scenario_name="Получение", features_base_dir="../features")
 def test_priviledges(auth):
     pass
 
 
-@scenario(feature_name="auth.feature", scenario_name="Получение токена", features_base_dir="features")
+@scenario(feature_name="auth.feature", scenario_name="Получение токена", features_base_dir="../features")
 def test_auth():
     pass
 
