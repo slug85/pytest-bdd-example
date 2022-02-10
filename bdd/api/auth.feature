@@ -1,4 +1,4 @@
-# Created by slugo at 07.10.2021
+@api
 Feature: Авторизация
 
   Scenario: Получение токена

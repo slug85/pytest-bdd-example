@@ -1,0 +1,3 @@
+pytest -m web - все веб тесты
+pytest - все тесты
+pytest -m api -n 2 апи тесты в 2 потока
