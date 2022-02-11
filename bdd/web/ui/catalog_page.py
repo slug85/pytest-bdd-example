@@ -1,10 +1,9 @@
-from selene.support.jquery_style_selectors import ss
-from selene import browser, by, be, have
+from selene import browser, have
 from selene.conditions import visible
+from selene.support.jquery_style_selectors import ss
 
 
-class CatalogPage(object):
-
+class CatalogPage:
     products = ss("div.xf-product__delivery")
 
     @classmethod
