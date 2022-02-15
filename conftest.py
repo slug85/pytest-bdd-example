@@ -9,21 +9,10 @@ def pytest_addoption(parser: Parser):
     parser.addoption(
         "--url",
         action="store",
-        default="https://vpr-fo1.im.perekrestok.ru/"
+        default="https://vpr-fo1.im.perekrestok.ru"
     )
 
 
 @pytest.fixture(scope="function")
 def datastore() -> DataStore:
     return DataStore()
-
-
-@pytest.fixture(scope="function")
-def auth(api_client: APIClient, datastore: DataStore):
-    pin_request(user=datastore.user, api_client=api_client)
-    auth_request(user=datastore.user, api_client=api_client)
-
-
-@pytest.fixture(scope="function")
-def auth_pin(api_client: APIClient, datastore: DataStore):
-    pin_request(user=datastore.user, api_client=api_client)

@@ -13,7 +13,7 @@ def test_auth():
 
 
 @scenario(feature_name="features/screen.feature", scenario_name="Получение Главный экран без авторизации")
-def test_screen():
+def test_screen(auth_pin):
     pass
 
 # scenarios("./features")
