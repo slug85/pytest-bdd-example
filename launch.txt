@@ -4,3 +4,6 @@ pytest -m api -n 2 апи тесты в 2 потока
 
 с аллюр отчетом c перезапуском
 pytest -n 3 --alluredir=../allure  --reruns 1
+
+c телеграмм
+ --telegram_id=-123123123 --telegram_token=123123:5s7wuYelXD6t_au6g --telegram_list_failed
