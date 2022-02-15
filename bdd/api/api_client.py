@@ -28,6 +28,7 @@ class APIClient:
             "X-API-Context-Shop-Id": "2527",
             "X-Data-Platform": "Android",
             "X-Data-Model": "Samsung",
+            "X-API-Context-Region-Id": "1",
             "X-Data-Version": "1.14",
             "Content-Type": "application/json",
         }
