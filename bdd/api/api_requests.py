@@ -33,6 +33,6 @@ def auth_request(user: User, api_client: APIClient) -> Response:
     return response
 
 
-def privileges_request(user: User, api_client: APIClient) -> Response:
+def privileges_request(api_client: APIClient, user: User = None) -> Response:
     response = api_client.get(path=privileges_request_path, user=user)
     return response

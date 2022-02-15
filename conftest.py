@@ -22,3 +22,8 @@ def datastore() -> DataStore:
 def auth(api_client: APIClient, datastore: DataStore):
     pin_request(user=datastore.user, api_client=api_client)
     auth_request(user=datastore.user, api_client=api_client)
+
+
+@pytest.fixture(scope="function")
+def auth_pin(api_client: APIClient, datastore: DataStore):
+    pin_request(user=datastore.user, api_client=api_client)

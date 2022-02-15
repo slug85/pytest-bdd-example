@@ -4,7 +4,6 @@ from typing import Dict
 import requests
 import http.client as http_client
 from requests import Response
-
 from datastore import User
 
 
@@ -40,7 +39,6 @@ class APIClient:
         return requests.post(url=url, params=params, data=data, headers=new_headers)
 
     def get(self, path="/", params=None, headers=None, user: User = None) -> Response:
-
         new_headers = self.merge_headers(headers, user)
         return requests.get(url=self.base_address + path, params=params, headers=new_headers)
 
