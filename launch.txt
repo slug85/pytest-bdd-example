@@ -2,5 +2,5 @@ pytest -m web - все веб тесты
 pytest - все тесты
 pytest -m api -n 2 апи тесты в 2 потока
 
-с аллюр отчетом
-pytest -n 3 --alluredir=../allure
+с аллюр отчетом c перезапуском
+pytest -n 3 --alluredir=../allure  --reruns 1
