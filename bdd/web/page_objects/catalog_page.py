@@ -12,4 +12,4 @@ class CatalogPage:
 
     @staticmethod
     def open():
-        browser.open_url("catalog/1304/ryba-i-moreprodukty")
+        browser.open_url("/catalog/1304/ryba-i-moreprodukty")

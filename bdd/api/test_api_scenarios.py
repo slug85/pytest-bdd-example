@@ -1,5 +1,5 @@
 from pytest_bdd import scenario
-from steps import *
+from api_steps import *
 
 
 @scenario(feature_name="features/privileges.feature", scenario_name="Получение привиоегий")
