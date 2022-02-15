@@ -6,3 +6,4 @@ pytest-xdist~=2.4.0
 selene~=1.0.2
 selenium~=4.1.0
 allure-pytest-bdd~=2.9.45
+pytest-telegram~=1.2.0
