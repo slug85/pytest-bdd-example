@@ -23,4 +23,5 @@ def get_token(api_client: APIClient, datastore: DataStore):
 
 @given(parsers.cfparse("Я отправляю GET запрос {path}"))
 def get(datastore: DataStore, api_client: APIClient, path):
-    api_client.get(path=path, user=datastore.user)
+    response = api_client.get(path=path, user=datastore.user)
+    assert response.status_code == 200
