@@ -3,7 +3,13 @@ from bdd.api.api_requests import *
 from datastore import DataStore
 
 
-@given("Я получаю список привилегий")
+@given("Я авторизуюсь в апи")
+def authorize(api_client: APIClient, datastore: DataStore):
+    pin_request(user=datastore.user, api_client=api_client)
+    auth_request(user=datastore.user, api_client=api_client)
+
+
+@then("Я получаю список привилегий")
 def get_priviledges(api_client: APIClient, datastore: DataStore):
     response = privileges_request(user=datastore.user, api_client=api_client)
     assert response.status_code == 200
@@ -21,7 +27,7 @@ def get_token(api_client: APIClient, datastore: DataStore):
     assert response.status_code == 200
 
 
-@given(parsers.cfparse("Я отправляю GET запрос {path}"))
+@then(parsers.cfparse("Я отправляю GET запрос {path}"))
 def get(datastore: DataStore, api_client: APIClient, path):
     response = api_client.get(path=path, user=datastore.user)
     assert response.status_code == 200
