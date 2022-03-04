@@ -7,4 +7,4 @@ from web_steps import *
 #     pass
 
 
-scenarios("./features")
+scenarios("features")
